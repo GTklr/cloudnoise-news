@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline text-green-400">
-        hello
-      </h1>
+      <Navbar />
+      <Home />
+      <Footer className="fixed bottom-0"/>
     </div>
   )
 }
