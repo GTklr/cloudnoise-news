@@ -4,33 +4,70 @@ import { Editor } from '@tinymce/tinymce-react';
 //firebase imports
 import {db} from '../firebase/config'
 import {collection, addDoc} from 'firebase/firestore'
-import {useCollection} from "../hooks/useCollection"
+
+import { getStorage, ref, uploadBytes, getDownloadURL, } from "firebase/storage";
+
+
 
 
 export default function Create() {
 
+  const storage = getStorage();
+  
+
+  const imagesUploadHandler = async (blobInfo, success, failure) => {
+    try {
+      const file = blobInfo.blob();
+      const storageRef = ref(storage, file.name);
+      const metadata = {
+        contentType: file.type,
+      };
+      
+      // Create a new Blob object with the file data
+      const blob2 = await new Blob([file], { type: file.type });
+      
+      // Upload the Blob to Firebase Storage
+      await uploadBytes(storageRef, blob2, metadata);
+      const url = await getDownloadURL(storageRef);
+      console.log(url);
+      return url;
+    
+    } catch (error) {
+      // Call the failure callback with the error message;;
+      console.log(error.message)
+    }
+  };
+  
+  const handleEditorChange = async (content, editor) => {
+    const blobUrls = editor.dom.select("img[src^='blob:']");
+    // Replace the blob URLs with the uploaded image URLs
+    blobUrls.forEach(async (blobUrl) => {
+      const src = blobUrl.getAttribute("src");
+      const newSrc = src.replace(/^blob:/, await imagesUploadHandler());
+      blobUrl.setAttribute("src", newSrc);
+    });
+  };
+  
   const [title, setTitle] = useState('')
-  const [embedd, setEmbedd] = useState('')
-
-
   const newMiliTime = Date.now()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    
     await addDoc(collection(db, "BlogPosts"), {
       title: title,
       content: editorRef.current.getContent(),
       date: newMiliTime,
     })
-
     setTitle('')
-
+    editorRef.current.setContent('')
   }
 
   const editorRef = useRef(null);
+
   const log = () => {
     if (editorRef.current) {
+      e.preventDefault()
       console.log(editorRef.current.getContent());
     }
   };
@@ -41,7 +78,7 @@ export default function Create() {
         <h1>Create new blogpost</h1>
       </div>
 
-      <div className='w-1/2 mx-auto py-5'>
+      <div className='w-9/12 mx-auto py-5'>
         <form className="d-flex flex-column" onSubmit={handleSubmit}>
           <label>
             <span> title:</span>
@@ -49,12 +86,13 @@ export default function Create() {
              value={title}
             required/>
           </label>
-          {/* TODO find out why the fuck the buttos not working */}
+          {/* TODO fix display image properly */}
           <Editor tinymceScriptSrc="../node_modules/tinymce/tinymce.min.js" 
             onInit={(evt, editor) => editorRef.current = editor}
             apiKey='qlg68c2xisozytp1ar0uwnqkruqovu2awgckfdyh6emv9tf7'
             initialValue="<p>This is the initial content of the editor.</p>"
             init={{
+              images_upload_handler: imagesUploadHandler,  
               height: 500,
               menubar: false,
               plugins: [
@@ -65,11 +103,18 @@ export default function Create() {
               
               toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview media | forecolor backcolor emoticons',
               
-              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+              
             }}
+            onEditorChange={handleEditorChange}
+            
           />
           <button className="btn mt-5">submit</button>
         </form>
+
+        <div>
+          
+        </div>
       </div>
 
     </ div>
