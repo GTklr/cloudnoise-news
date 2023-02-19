@@ -1,14 +1,21 @@
-import React from 'react'
+import {Link } from "react-router-dom"
 
 export default function Navbar() {
   return (
     <div className="bg-slate-800 text-white h-12 flex justify-between items-center">
         <div>
-          <h1>home</h1>
+          <ul className="flex justify-start">
+            <li className="ml-5 p-2"><Link to="/">Home</Link></li>
+            <li className="p-2"><Link to="/about">About</Link></li>
+            <li className="p-2"><Link to="/blog">Blog</Link></li>
+            <li className="p-2"><Link to="/artists">Artists</Link></li>
+            <li className="p-2"><Link to="/contact">Contact</Link></li>
+            <li className="p-2"><Link to="/create">Create</Link></li>
+          </ul>
         </div>
 
         <div>
-          <a href='/' className='btn'>Login</a>
+          <a href='/' className='btn mr-5'>Login</a>
         </div>
 
     

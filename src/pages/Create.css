@@ -1,0 +1,15 @@
+.wrapper-class {
+    padding: 1rem;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .editor-class {
+    background-color:white;
+    padding: 1rem;
+    border-radius: 10px;
+    height: 100%;
+
+  }
+  .toolbar-class {
+    border-radius: 10px;
+  }
