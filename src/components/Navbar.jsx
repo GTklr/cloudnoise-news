@@ -11,6 +11,8 @@ export default function Navbar() {
             <li className="p-2"><Link to="/artists">Artists</Link></li>
             <li className="p-2"><Link to="/contact">Contact</Link></li>
             <li className="p-2"><Link to="/create">Create</Link></li>
+            <li className="p-2"><Link to="/login">Login</Link></li>
+            <li className="p-2"><Link to="/signup">Signup</Link></li>
           </ul>
         </div>
 

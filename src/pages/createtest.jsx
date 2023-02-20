@@ -13,4 +13,3 @@ try {
     // Call the failure callback with the error message
     console.log(error.message);
   }
-};

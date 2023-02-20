@@ -11,6 +11,8 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Create from './pages/Create';
 import Home from './pages/Home'
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
       <Route path="/artists" element={ <Artists/> } />
       <Route path="/create" element={ <Create/> } />
       <Route path="/contact" element={ <Contact/> } />
+      <Route path="/login" element={ <Login/> } />
+      <Route path="/signup" element={ <SignUp/> } />
 
       
       </Routes>
