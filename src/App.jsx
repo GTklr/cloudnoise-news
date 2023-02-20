@@ -1,5 +1,6 @@
 //react imports
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BlogPost from './components/BlogPost';
 
 
 //Component Imports
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <Router>
-    <div className="App">
+    <div className="App font-body">
     <Navbar />
 
       <Routes>
@@ -32,6 +33,10 @@ function App() {
       <Route path="/contact" element={ <Contact/> } />
       <Route path="/login" element={ <Login/> } />
       <Route path="/signup" element={ <SignUp/> } />
+      <Route path="/signup" element={ <SignUp/> } />
+      <Route path="/blogpost/:title" element={ <BlogPost/> } />
+      
+          
 
       
       </Routes>

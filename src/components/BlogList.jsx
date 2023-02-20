@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 export default function BlogList( {BlogDATA}) {
 
@@ -18,14 +18,21 @@ export default function BlogList( {BlogDATA}) {
 
   return (
    
-      <div className="bg-green-600">
-        <div className="grid grid-cols-3">
+      <div className="">
+        <div className="grid mt-8 grid lg:grid-cols-4 gap-10">
         {sortedLinks.map(sortedLinks => (
             <div key={sortedLinks.id} className="card">
-                <div>
-                  <h3 className="text-2xl">{sortedLinks.title}</h3>
-                  <div dangerouslySetInnerHTML={{__html: sortedLinks.content}} />
-                </div>    
+              <div>
+                <img src={sortedLinks.featureIMG} />
+                {/* <div dangerouslySetInnerHTML={{__html: sortedLinks.content}} /> */}
+              </div>  
+              <div className="m-4">
+                <span className="font-bold">{sortedLinks.title}</span>
+                <span className="block text-gray-500 text-sm">AUTHOR VARIABLE</span>
+                <span className="block text-secondary text-sm"><Link to={`/blogpost/${sortedLinks.title}`}> Read more...</Link></span>
+                
+
+              </div>  
             </div>
         ))}
         </div>

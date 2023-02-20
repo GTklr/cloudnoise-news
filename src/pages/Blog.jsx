@@ -7,15 +7,13 @@ export default function Blog() {
  const {documents: data} = useCollection('BlogPosts')
    
   return (
-   <div id="linkinbioBG" className="d-flex align-items-center">
-      <div className="container w-75 LinkContainer ">
+   <div className="flex align-middle justify-center min-h-screen text-white">
 
-
-         <div className="LinkSection ">
-         <h1 className="text-center">Blogs</h1>
-            {data && <BlogList BlogDATA={data} /> } 
+         <div className="px-16 py-6 bg-third md:col-span-2 ">
+            <h1 className="text-center font-bold">News & Updates</h1>
+               {data && <BlogList BlogDATA={data} /> } 
          </div>
-      </div>
+
    </div>    
   )
 }
