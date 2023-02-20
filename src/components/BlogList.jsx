@@ -23,7 +23,7 @@ export default function BlogList( {BlogDATA}) {
         {sortedLinks.map(sortedLinks => (
             <div key={sortedLinks.id} className="card">
               <div>
-                <img src={sortedLinks.featureIMG} />
+                <img src={sortedLinks.featureIMG} className="w-full h-32 sm:h-48 object-cover"/>
                 {/* <div dangerouslySetInnerHTML={{__html: sortedLinks.content}} /> */}
               </div>  
               <div className="m-4">
