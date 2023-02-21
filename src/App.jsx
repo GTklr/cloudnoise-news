@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Create from './pages/Create';
 import Home from './pages/Home'
 import Login from './pages/Login';
+import Profile from './pages/Profile';
 import SignUp from './pages/Signup';
 
 
@@ -21,11 +22,12 @@ function App() {
   return (
     <Router>
     <div className="App font-body">
+    <Home/>
     <Navbar />
 
       <Routes>
       
-      <Route exact path="/" element={ <Home/> } />
+      <Route exact path="/"></Route>
       <Route exact path="/about" element={ <About/> } />
       <Route path="/blog" element={ <Blog/> } />
       <Route path="/artists" element={ <Artists/> } />
@@ -35,6 +37,7 @@ function App() {
       <Route path="/signup" element={ <SignUp/> } />
       <Route path="/signup" element={ <SignUp/> } />
       <Route path="/blogpost/:title" element={ <BlogPost/> } />
+      <Route path="/profile/:displayName" element={ <Profile/> } />
       
           
 

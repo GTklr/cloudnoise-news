@@ -1,6 +1,11 @@
 import {Link } from "react-router-dom"
+import { useAuthContext } from "../hooks/useAuthContext";
+
 
 export default function Navbar() {
+  const {user} = useAuthContext()
+
+
   return (
     <div className="bg-primary text-white h-12 flex justify-between items-center">
         <div>
@@ -13,8 +18,14 @@ export default function Navbar() {
             <li className="p-2"><Link to="/create">Create</Link></li>
             <li className="p-2"><Link to="/login">Login</Link></li>
             <li className="p-2"><Link to="/signup">Signup</Link></li>
+            <li className="p-2"><Link to={`/profile/${user?.displayName}`}>profile</Link></li>
+            
           </ul>
+
+          
         </div>
+
+        <p className="flex justify-end">hi, {user?.displayName}</p>
 
     
     </div>

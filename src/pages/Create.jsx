@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import { useAuthContext } from "../hooks/useAuthContext"
 
 //firebase imports
 import {db} from '../firebase/config'
@@ -14,6 +15,7 @@ export default function Create() {
   const [title, setTitle] = useState('')
   const [file, setFile] = useState('')
   const [percent, setPercent] = useState(0)
+  const { user } = useAuthContext()
   const newMiliTime = Date.now()
 
   // Handle file upload event and update state
@@ -88,6 +90,9 @@ export default function Create() {
               content: editorRef.current.getContent(),
               date: newMiliTime,
               featureIMG: featureUrl,
+              uid: user.uid,
+              author: user.displayName
+              
             }).then(() => {
               setTitle("");
               editorRef.current.setContent("");

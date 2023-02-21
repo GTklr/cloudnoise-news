@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useLogin } from '../hooks/useLogin'
 import { useAuthContext } from "../hooks/useAuthContext";
 import { signInWithGoogle } from '../hooks/useGoogle';
+import { useLogout } from '../hooks/useLogout';
 
 export default function Login() {
 
@@ -12,8 +13,10 @@ const {error, login} = useLogin()
 const handleSubmit = (e) => {
    e.preventDefault()
    signInWithGoogle()
+
 }
 const {user} = useAuthContext()
+const {logout} = useLogout()
   
 
 
@@ -27,7 +30,7 @@ const {user} = useAuthContext()
 		    </div>
         
 
-        <div className="rounded bg-white max-w-md rounded overflow-hidden shadow-xl p-5">
+        <div className="rounded bg-white max-w-md overflow-hidden shadow-xl p-5">
           <form onSubmit={handleSubmit} className="">
             {!user&& <div>
               <label className='block'>
@@ -52,15 +55,11 @@ const {user} = useAuthContext()
                   </span>
                   Sign in
               </button>}
-              {user && <a className="btn-disabled">
-                  <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                    <svg className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="True">
-                      <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" /> </svg>
-                  </span>
-                  Signed in
-              </a>}
+              
                 {error && <p>{error}</p>}
           </form>
+
+          {user && <button className="btn" onClick={logout}>Logout</button>}
         </div>
         </div>
     

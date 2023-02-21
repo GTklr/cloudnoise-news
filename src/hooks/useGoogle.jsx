@@ -10,6 +10,7 @@ import {query, getDocs, collection, where, addDoc} from "firebase/firestore";
       const res = await signInWithPopup(auth, googleProvider);
       const user = res.user;
       const q = query(collection(db, "users"), where("uid", "==", user.uid));
+
       const docs = await getDocs(q);
       if (docs.docs.length === 0) {
         await addDoc(collection(db, "users"), {
