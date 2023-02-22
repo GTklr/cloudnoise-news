@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className="bg-fourth w-full text-center">
+    <div className="border-t-2 w-full text-center fixed bottom-0">
 
-        <h2 className='text-white'>Footer man</h2>
+        <p className='text-white'>Icons</p>
     </div>
   )
 }

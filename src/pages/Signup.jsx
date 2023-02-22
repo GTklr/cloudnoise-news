@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import TransitionsIndiv from '../components/transitions/TransitionIndiv'
 import { useSignup } from '../hooks/useSignup'
 
 export default function SignUp() {
@@ -14,21 +15,22 @@ const handleSubmit = (e) => {
 
 
   return (
-   <div className="bg-slate-900 text-white h-1/2 flex justify-center">
-      <div className="container Auth-page">
+   <TransitionsIndiv>
+   <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="rounded bg-white max-w-md overflow-hidden shadow-xl p-5">
          <h2 className="page-title">Sign Up</h2>
 
             <form onSubmit={handleSubmit} className="text-black">
                <label>
                   <span> Email:</span>
-                  <input type="email" onChange={(e) => setEmail(e.target.value)}
+                  <input className="formField" type="email" onChange={(e) => setEmail(e.target.value)}
                   value={email}
                   required/>
                </label>
 
                <label>
                   <span> Password:</span>
-                  <input type="password" onChange={(e) => setPassword(e.target.value)}
+                  <input className="formField" type="password" onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   required/>
                </label>   
@@ -38,6 +40,7 @@ const handleSubmit = (e) => {
             </form>
       </div>
    </div>
+   </TransitionsIndiv>
 
   )
 }

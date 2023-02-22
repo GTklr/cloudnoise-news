@@ -10,22 +10,23 @@ export const useCollectionIndiv = (c, uid) => {
    const {user} = useAuthContext()
 
    useEffect(() => {
-      let ref = collection(db, c)
-// TODO GET CURRENT USER UID HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>v
-      const q = query(collection(db, "LinkTree"), where("uid", "==", "Y7u8izJvlsc3p2OiPBB5NcwxPDm1"));
-
-      const unsub = onSnapshot(q, (snapshot) => {
-            let results = []
-            snapshot.docs.forEach(doc => {
-               results.push({id: doc.id, ...doc.data()})
-   
-            })
-            setDocuments(results)
-            })
-
-      return () => unsub()
-
-   }, [c, uid])
+      if (user?.uid) { // Execute the query only if user.uid is available
+       const q = query(
+         collection(db, c),
+         where('uid', '==', user.uid)
+       );
+       const unsub = onSnapshot(q, (snapshot) => {
+         let results = [];
+         snapshot.docs.forEach((doc) => {
+          results.push({ id: doc.id, ...doc.data() });
+         });
+         setDocuments(results);
+       });
+       return () => unsub();
+      } else {
+       setDocuments(null); // Set documents to null when user is not available
+      }
+    }, [c, user]);
 
    return {documents}
 }

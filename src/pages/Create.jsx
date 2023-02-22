@@ -7,6 +7,7 @@ import {db} from '../firebase/config'
 import {collection, addDoc} from 'firebase/firestore'
 
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL, } from "firebase/storage";
+import TransitionsIndiv from '../components/transitions/TransitionIndiv';
 
 
 
@@ -113,7 +114,8 @@ export default function Create() {
   const editorRef = useRef(null);
 
   return (
-    <div className=' bg-third text-center text-white min-h-screen'>
+    <TransitionsIndiv>
+    <div className='text-center text-white min-h-screen'>
       <div className="p-10">
         <div className="py-5">
           <h1>Create new blogpost</h1>
@@ -162,5 +164,6 @@ export default function Create() {
 
       </div>
     </ div>
+    </TransitionsIndiv>
   );
 }

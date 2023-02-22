@@ -1,8 +1,9 @@
 import React from 'react'
+import TransitionsIndiv from '../components/transitions/TransitionIndiv'
 
 export default function Contact() {
   return (
-    <div>Contact</div>
+    <TransitionsIndiv>Contact</TransitionsIndiv>
   )
 }
 

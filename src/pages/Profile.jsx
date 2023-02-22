@@ -8,6 +8,7 @@ import {db} from '../firebase/config'
 
 
 import { useParams } from 'react-router-dom'
+import TransitionsIndiv from '../components/transitions/TransitionIndiv';
 
 export default function Profile() {
     
@@ -65,6 +66,7 @@ export default function Profile() {
         }
     
   return (
+    <TransitionsIndiv>
     <div className='text-white text-center'>
         <div className="max-w-lg py-16 mx-auto dark:text-gray-50">
             <div className="p-10 bg-fourth mx-auto rounded-lg">
@@ -109,5 +111,6 @@ export default function Profile() {
          </div>
         </div>
     </div>
+    </TransitionsIndiv>
   )
 }

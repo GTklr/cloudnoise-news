@@ -1,12 +1,16 @@
 import React from 'react'
-import Hero1 from '../components/home/Hero1'
+import Transitions from '../components/transitions/TransitionZoom'
 
 export default function Home() {
   return (
-    <div>
-      <Hero1 />
-    </div>
+    <Transitions>
+        <div className='flex justify-center items-center HeroOne'>
+            <div className='py-10 '>
+                <div className='text-center'>
+                    <h1 className='font-bold text-5xl text-white pb-4'>Home</h1>
+                </div>
+            </div>
+        </div>
+    </Transitions>
   )
 }
-// TODO buil more components for home
-
