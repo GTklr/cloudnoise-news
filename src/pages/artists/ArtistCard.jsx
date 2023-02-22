@@ -5,11 +5,12 @@ import DansonPic from "../../assets/dansonpic.jpg"
 
 export default function ArtistCard() {
   return (
-    <div className='text-center mx-auto mt-5 mb-5'>
+    // Container applies AND UP, meaning large and UP will have container, if SM:container, means SM and UP
+    <div className='text-center mx-auto mt-5 mb-5 sm:container'>
         <div className="m-10">
             <h1>The collective </h1>
         </div>
-        <div className="lg:container lg:mx-auto grid grid-cols-2 m-2 gap-2 gap-y-5 lg:grid-cols-1">
+        <div className=" lg:mx-auto grid grid-cols-2 m-2 gap-2 gap-y-5 lg:grid-cols-1">
             <div className='ZOOK h-fit overflow-hidden shadow-2xl '>
 
                 <div className="lg:grid lg:grid-cols-2">

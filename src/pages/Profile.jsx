@@ -69,7 +69,7 @@ export default function Profile() {
     <TransitionsIndiv>
     <div className='text-white text-center'>
         <div className="max-w-lg py-16 mx-auto dark:text-gray-50">
-            <div className="p-10 bg-fourth mx-auto rounded-lg">
+            <div className="p-10 shadow-lg mx-auto rounded-lg">
             <h1 className="font-bold leading-tight">Update Profile</h1>
                 <div className="">
                 <form onSubmit={handleSubmit} className="py-5">
@@ -84,7 +84,7 @@ export default function Profile() {
                 </div>
             </div>
 
-            <div className="p-10 mt-5 bg-fourth mx-auto rounded-lg">
+            <div className="p-10 mt-5 shadow-lg mx-auto rounded-lg">
                 <h2 className="font-bold leading-tight">Create Links</h2>
                 <form onSubmit={handleSubmitLink} className="d-flex flex-column">
                     <label>
@@ -105,7 +105,7 @@ export default function Profile() {
                 </form>
             </div>
 
-            <div className="p-10 mt-5 bg-fourth mx-auto rounded-lg">
+            <div className="p-10 mt-5 shadow-lg mx-auto rounded-lg">
                 <h2 className="font-bold leading-tight">Current Links</h2>
             {data && <CreateLinkList LinkDATA={data} urls={urls}/> }
          </div>

@@ -23,7 +23,7 @@ export default function NavbarOne() {
       <li className="p-1 NavItem"><Link to="/contact">Contact</Link></li>
       {user&& <p>||</p>}
       {user && <li className="p-1 NavItem"><Link to="/create">Create</Link></li>}
-      {user && <li className="p-1 NavItem"><Link to="/profile">Profile</Link></li>}
+      {user && <li className="p-1 NavItem"><Link to={`/profile/${user.displayName}`}>Profile</Link></li>}
       {!user &&<li className="p-1 NavItem"><Link to="/login">Login</Link></li>}
     </ul>
   );

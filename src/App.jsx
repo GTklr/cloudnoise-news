@@ -79,7 +79,7 @@ function App() {
   return (
     
     <Router>
-      <div class="App font-body video-background">
+      <div className="App font-body video-background">
       <Animated />
       <video className='videoTag' autoPlay loop muted>
         <source src={CloudsVid} type='video/mp4' />
