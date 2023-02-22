@@ -5,7 +5,7 @@ import cnLogo from "../../assets/cnLogo.png"
 
 export default function Hero1() {
   return (
-    <div className='flex justify-center items-center HeroOne'>
+    <div className='flex justify-center items-center h-screen'>
         <div className='py-10 '>
             <div className='text-center' style={{ width: '500px' }}>
               <img src={cnLogo} className="w-full"/>
