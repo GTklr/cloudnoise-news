@@ -7,9 +7,12 @@
 
 
 body{
-  @apply text-white
+  @apply text-white;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 h1{
