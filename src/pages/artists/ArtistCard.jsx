@@ -5,7 +5,7 @@ import DansonPic from "../../../public/assets/dansonpic.jpg"
 
 export default function ArtistCard() {
   return (
-    <div className='text-center lg:container mx-auto'>
+    <div className='text-center md:container container mx-auto '>
 
         <div className="grid grid-cols-3 gap-10 m-10">
             <div className='ZOOK bg-fourth rounded-lg shadow-lg'>

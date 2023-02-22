@@ -7,7 +7,7 @@ export default function Navbar() {
 
 
   return (
-    <div className="bg-primary text-white h-12 flex justify-between items-center fixed top-0 w-full">
+    <div className="text-white h-12 flex justify-between items-center fixed top-0 w-full">
         <div>
           <ul className="flex justify-start">
             <li className="ml-5 p-2"><Link to="/home">Home</Link></li>
