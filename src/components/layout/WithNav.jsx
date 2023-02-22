@@ -1,6 +1,6 @@
 // WithNav.js (Stand-alone Functional Component)
 import React from 'react';
-import NavBar from '../Navbar.jsx';
+import NavBarOne from '../Navbar.jsx';
 import { Outlet } from 'react-router';
 import Footer from '../Footer.jsx';
 import Transitions from '../transitions/Transition'
@@ -8,7 +8,7 @@ import Transitions from '../transitions/Transition'
 export default () => {
   return (
     <Transitions>
-      <NavBar />
+      <NavBarOne />
         <Outlet />
       <Footer> </Footer>
     </Transitions>

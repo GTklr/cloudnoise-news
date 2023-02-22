@@ -41,3 +41,21 @@ h3{
 .card{
   @apply bg-fourth rounded-lg overflow-hidden shadow-md relative hover:shadow-lg
 }
+
+.outlineBtn{
+  transition: transform 0.2s ease-in-out;
+  @apply outline outline-1 rounded-none px-2 py-1 hover:bg-white hover:text-primary hover:outline-none font-normal;
+}
+
+.outlineBtn:hover{
+  transform: scale(1.05)
+}
+
+.NavItem {
+  transition: transform 0.2s ease-in-out;
+  @apply hover:text-secondary
+}
+
+.NavItem:hover{
+  transform: scale(1.06)
+}

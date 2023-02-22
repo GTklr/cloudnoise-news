@@ -10,7 +10,8 @@ module.exports = {
         primary: "#2d2d2d",
         secondary: "#E91e63",
         third: "#171717",
-        fourth: "#1e1e1e"
+        fourth: "#1e1e1e",
+        contrast: "#d3d3d3"
       },
       fontFamily: {
         'body': "Roboto Mono"

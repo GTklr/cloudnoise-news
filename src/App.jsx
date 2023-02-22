@@ -2,14 +2,14 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import BlogPost from './components/BlogPost';
 import "./App.css"
-import CloudsVid from '/public/assets/clouds.mp4';
+import CloudsVid from './assets/clouds.mp4';
 
 
 //Component Imports
 import Footer from './components/Footer'
 import WithNav from './components/layout/WithNav';
 import WithoutNav from './components/layout/WithoutNav';
-import Navbar from './components/Navbar'
+import NavbarOne from './components/Navbar'
 import About from './pages/About';
 import Artists from './pages/artists/Artists';
 import Blog from './pages/Blog';
@@ -23,7 +23,6 @@ import SignUp from './pages/Signup';
 import { AnimatePresence } from 'framer-motion';
 
 const Animated = () => {
-  const location = useLocation();
   return (
       <AnimatePresence mode='sync' >
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Hero.css"
-import cnLogo from "../../../public/assets/cnLogo.png"
+import cnLogo from "../../assets/cnLogo.png"
 
 export default function Hero1() {
   return (

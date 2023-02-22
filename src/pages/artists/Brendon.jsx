@@ -1,5 +1,5 @@
 import React from 'react'
-import BrendonPic from "../../../public/assets/BrendonPic.jpg"
+import BrendonPic from "../../assets/BrendonPic.jpg"
 
 export default function Brendon() {
   return (

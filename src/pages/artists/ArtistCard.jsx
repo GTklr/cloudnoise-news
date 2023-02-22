@@ -1,7 +1,7 @@
 import React from 'react'
-import ZeaukPic from "../../../public/assets/DSC03303.jpg"
-import BrendonPic from "../../../public/assets/BrendonPic.jpg"
-import DansonPic from "../../../public/assets/dansonpic.jpg"
+import ZeaukPic from "../../assets/DSC03303.jpg"
+import BrendonPic from "../../assets/BrendonPic.jpg"
+import DansonPic from "../../assets/dansonpic.jpg"
 
 export default function ArtistCard() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import ZeaukPic from "../../../public/assets/DSC03303.jpg"
+import ZeaukPic from "../../assets/DSC03303.jpg"
 
 export default function Zeauk() {
   return (
