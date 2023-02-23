@@ -15,7 +15,7 @@ export default function NavbarOne() {
   }, []);
  
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 items-center">
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 items-center ">
       <li className="p-1 NavItem"><Link to="/home">Home</Link></li>
       <li className="p-1 NavItem"><Link to="/about">About</Link></li>
       <li className="p-1 NavItem"><Link to="/blog">Blog</Link></li>
@@ -29,8 +29,8 @@ export default function NavbarOne() {
   );
  
   return (
-    <Navbar className="mx-auto max-w-screen-xl py-1 px-4 lg:px-8 lg:py-4 bg-transparent border-none shadow-lg rounded-lg mt-2">
-      <div className="container mx-auto flex items-center justify-between">
+    <Navbar className="navGrabber mx-auto max-w-screen-xl py-1 px-4 lg:px-8 lg:py-4 bg-transparent border-none shadow-lg rounded-lg mt-2">
+      <div className="container mx-auto flex items-center justify-between ">
 
         <div className="hidden lg:block">{navList}</div>
 

@@ -4,7 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body{
   @apply text-white;
@@ -63,4 +67,18 @@ h3{
 
 .NavItem:hover{
   transform: scale(1.06)
+}
+
+.footerGrabber{
+
+}
+
+.navGrabber{
+
+}
+
+.fullscreen {
+  height: calc(100vh - var(--navbar-height) - var(--footer-height)) !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
 }
