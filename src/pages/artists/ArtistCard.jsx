@@ -81,33 +81,33 @@ export default function ArtistCard(){
 
             <section className="h-fit items-center justify-center container mx-auto">
                 <Item>
-                 <Link to="/artists/zeauk"><img src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <img className='imgHover' src={ZeaukLogo} alt="" />
+                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <img src={MuratoneLogo} alt="" />
-                </Item>
-                
-                <Item>
-                 <img src={BrendonLogo} alt="" />
-                </Item>
-                <Item>
-                 <img src={ZeaukLogo} alt="" />
-                </Item>
-                <Item>
-                 <img src={MuratoneLogo} alt="" />
+                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
                 </Item>
                 
                 <Item>
-                 <img src={BrendonLogo} alt="" />
+                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <img src={ZeaukLogo} alt="" />
+                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <img src={MuratoneLogo} alt="" />
+                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
+                </Item>
+                
+                <Item>
+                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
+                </Item>
+                <Item>
+                 <Link to="/artist/zeauk"><img className='imgHover'src={BrendonLogo} alt=""/></Link>
+                </Item>
+                <Item>
+                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
                 </Item>
                 
             </section>

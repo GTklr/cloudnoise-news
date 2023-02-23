@@ -21,6 +21,7 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import SignUp from './pages/Signup';
 import { AnimatePresence } from 'framer-motion';
+import Zeauk from './pages/artists/Zeauk';
 
 const Animated = () => {
   return (
@@ -70,7 +71,12 @@ const Animated = () => {
   <Route element={<WithNav />}>
     <Route path="/profile/:displayName" element={ <Profile/> } />
   </Route>
+
+  <Route element={<WithNav />}>
+    <Route path="/artist/zeauk" element={ <Zeauk/> } />
+  </Route>
 </Routes>
+
       </AnimatePresence>
   )
 }
