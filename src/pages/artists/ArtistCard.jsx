@@ -3,6 +3,12 @@ import ZeaukPic from "../../assets/ZeaukPic.jpg"
 import ZeaukLogo from "../../assets/logo/Artboard 2.png"
 import BrendonLogo from "../../assets/logo/Artboard 3.png"
 import MuratoneLogo from "../../assets/logo/Artboard 4.png"
+import dreamLogo from "../../assets/logo/dreamLogo.png"
+import zekkeLogo from "../../assets/logo/zekkeLogo.png"
+import ivoryLogo from "../../assets/logo/ivoryLogo.png"
+import eujuneLogo from "../../assets/logo/eujuneLogo.png"
+import dansonLogo from "../../assets/logo/dansonLogo.png"
+
 import "./ArtistCard.css"
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -15,7 +21,7 @@ function Item ({children}) {
     
     const { scrollYProgress } = useScroll({
       target: containerRef,
-      offset: ["100", "end end"]
+      offset: ['start end', "end end"]
     });
 
     const imageValueZeauk = useTransform(scrollYProgress, [0, 1], ['100%', '0%']);
@@ -68,8 +74,8 @@ export default function ArtistCard(){
         <div className=' px-10 pr-10 pl-10 lg:container container top-0 mx-auto lg:w-1/2'>
 
             <IntroText >
-                <div className="h-screen flex items-center justify-center mx-auto lg:w-1/2">
-                    <div>
+                <div className="h-screen flex items-center justify-center mx-auto lg:w-1/2 relative">
+                    <div className='absolute top-80'>
                         <h1>the collective</h1>
                         <p>Wherever we fly, we fly higher</p>
                     </div>
@@ -81,42 +87,42 @@ export default function ArtistCard(){
 
             <section className="h-fit items-center justify-center container mx-auto">
                 <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/brendonse7an"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/zeauk"><img className='imgHover' src={ZeaukLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
-                </Item>
-                
-                <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
-                </Item>
-                <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
-                </Item>
-                <Item>
-                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/danson"><img  className='imgHover'src={dansonLogo} alt=""/></Link>
                 </Item>
                 
                 <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover' src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/dream"><img className='imgHover' src={dreamLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <Link to="/artist/zeauk"><img className='imgHover'src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/ivory"><img className='imgHover' src={ivoryLogo} alt=""/></Link>
                 </Item>
                 <Item>
-                 <Link to="/artist/zeauk"><img  className='imgHover'src={BrendonLogo} alt=""/></Link>
+                 <Link to="/artist/zekke"><img  className='imgHover'src={zekkeLogo} alt=""/></Link>
+                </Item>
+                
+                <Item>
+                 <Link to="/artist/eujune"><img className='imgHover' src={eujuneLogo} alt=""/></Link>
+                </Item>
+
+                <Item>
+                 <Link to="/artist/muratone"><img className='imgHover' src={MuratoneLogo} alt=""/></Link>
                 </Item>
                 
             </section>
             
-            <div className="h-screen flex items-center">
-                <div className="text-center">
-                    <h1>Outtro</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates necessitatibus delectus tempora illum impedit placeat.</p>
-                    <a href="/" className='btn animate-pulse lg:w-1/2 mx-auto'>Bookings </a>
+            <div className="h-screen flex items-center ">
+                <div className="text-center mx-auto">
+                    <h1>Reach out to us</h1>
+                    <p>Drop us an enquiry for bookings, collaborations and more</p>
+                    <div className="pt-5">
+                    <a href="/contact" className='btn animate-pulse lg:w-1/2 mx-auto'>contact</a>
+                    </div>
                 </div>
             </div>
             

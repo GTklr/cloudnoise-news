@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import BlogPost from './components/BlogPost';
 import "./App.css"
-import CloudsVid from './assets/clouds.mp4';
+import CloudsVid from './assets/clouds.webm';
 
 
 //Component Imports
@@ -22,6 +22,13 @@ import Profile from './pages/Profile';
 import SignUp from './pages/Signup';
 import { AnimatePresence } from 'framer-motion';
 import Zeauk from './pages/artists/Zeauk';
+import Dream from './pages/artists/Dream';
+import Ivory from './pages/artists/Ivory';
+import Zekke from './pages/artists/Zekke';
+import Muratone from './pages/artists/Muratone';
+import Danson from './pages/artists/Danson';
+import Brendonse7an from './pages/artists/Brendon';
+import Eujune from './pages/artists/Eujune';
 
 const Animated = () => {
   return (
@@ -73,8 +80,32 @@ const Animated = () => {
   </Route>
 
   <Route element={<WithNav />}>
+    <Route path="/artist/brendonse7an" element={ <Brendonse7an/> } />
+  </Route>
+  <Route element={<WithNav />}>
     <Route path="/artist/zeauk" element={ <Zeauk/> } />
   </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/danson" element={ <Danson/> } />
+  </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/dream" element={ <Dream/> } />
+  </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/ivory" element={ <Ivory/> } />
+  </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/zekke" element={ <Zekke/> } />
+  </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/muratone" element={ <Muratone/> } />
+  </Route>
+  <Route element={<WithNav />}>
+    <Route path="/artist/eujune" element={ <Eujune/> } />
+  </Route>
+
+
+
 </Routes>
 
       </AnimatePresence>
@@ -85,13 +116,14 @@ function App() {
   return (
     
     <Router>
-      <div className="App font-body video-background">
-      <Animated />
-      <video className='videoTag' autoPlay loop muted>
-        <source src={CloudsVid} type='video/mp4' />
-      </video>
-      
-    </div>
+      <div className="App font-body">
+        <div className='video-background'>
+          <video className='videoTag' autoPlay loop muted>
+            <source src={CloudsVid} type='video/webm' />
+          </video>
+        </div>
+        <Animated />
+      </div>
     </Router>
   )
 }

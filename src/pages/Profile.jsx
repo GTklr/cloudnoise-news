@@ -67,7 +67,7 @@ export default function Profile() {
     
   return (
     <TransitionsIndiv>
-    <div className='text-white text-center'>
+    <div className='text-white text-center lg:px-20'>
         <div className="max-w-lg py-16 mx-auto dark:text-gray-50">
             <div className="p-10 shadow-lg mx-auto rounded-lg">
             <h1 className="font-bold leading-tight">Update Profile</h1>

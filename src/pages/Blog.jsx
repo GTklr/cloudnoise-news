@@ -21,13 +21,13 @@ export default function Blog() {
     }, []); // Only run the eff
    
   return (
-      <div>
+      <div className="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
             {!isVisible && <div className="h-screen flex justify-center items-center">
                  <FontAwesomeIcon icon={faCloud} className="m-2 animate-bounce" size="2xl"/>
                   </div>}
 
             {isVisible && <TransitionsIndiv className="flex justify-center items-center h-screen">
-                  <div className="px-16 py-6 md:col-span-2 ">
+                  <div className="py-16 md:col-span-2 ">
                         <h1 className="text-center font-bold">News & Updates</h1>
                         {data && <BlogList BlogDATA={data} /> } 
                   </div>

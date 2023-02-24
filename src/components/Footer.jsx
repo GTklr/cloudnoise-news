@@ -6,8 +6,9 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default function Footer() {
   return (
-    <div className="footerGrabber w-full text-center fixed bottom-0">
+    <div className="footerGrabber w-full text-center">
 
+      <span>
       <a href="https://open.spotify.com/artist/05d3FO1h0tnn4G8yRw3bzp" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faSpotify} className="m-2"/>
       </a>
@@ -18,7 +19,7 @@ export default function Footer() {
       <a href="mailto:hello@cloudnoise.com" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faEnvelope} className="m-2"/>
       </a>
-      
+      </span>
     </div>
   )
 }

@@ -16,10 +16,11 @@ export default function BlogList( {BlogDATA}) {
          return sortedLinks
       }))
 
+      console.log(sortedLinks)
+
   return (
    
-      <div className="">
-        <div className="grid mt-8 grid lg:grid-cols-4 gap-10">
+        <div className="grid mt-8 lg:grid-cols-4 gap-5">
         {sortedLinks.map(sortedLinks => (
             <div key={sortedLinks.id} className="card">
               <div>
@@ -28,14 +29,13 @@ export default function BlogList( {BlogDATA}) {
               </div>  
               <div className="m-4">
                 <span className="font-bold">{sortedLinks.title}</span>
-                <span className="block text-gray-500 text-sm">AUTHOR VARIABLE</span>
-                <span className="block text-secondary text-sm"><Link to={`/blogpost/${sortedLinks.title}`}> Read more...</Link></span>
+                {/* <span className="block text-gray-500 text-sm">by {sortedLinks.author}</span> */}
+                <span className="block text-gray-300 text-sm"><Link to={`/blogpost/${sortedLinks.title}`}> Read more...</Link></span>
                 
 
               </div>  
             </div>
         ))}
         </div>
-      </div>
   )
 }

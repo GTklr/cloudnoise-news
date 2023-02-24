@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, MobileNav, Typography, Button, IconButton, } from "@material-tailwind/react";
 import { useAuthContext } from "../hooks/useAuthContext";
+import Transitions from '../components/transitions/Transition'
  
 export default function NavbarOne() {
   const {user} = useAuthContext()
@@ -13,22 +14,27 @@ export default function NavbarOne() {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const handleCloseNav = () => {
+    setOpenNav(false);
+  };
  
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 items-center ">
-      <li className="p-1 NavItem"><Link to="/home">Home</Link></li>
-      <li className="p-1 NavItem"><Link to="/about">About</Link></li>
-      <li className="p-1 NavItem"><Link to="/blog">Blog</Link></li>
-      <li className="p-1 NavItem"><Link to="/artists">Artists</Link></li>
-      <li className="p-1 NavItem"><Link to="/contact">Contact</Link></li>
+      <li className="p-1 NavItem"><Link to="/home" onClick={handleCloseNav}>Home</Link></li>
+      <li className="p-1 NavItem"><Link to="/about" onClick={handleCloseNav}>About</Link></li>
+      <li className="p-1 NavItem"><Link to="/blog" onClick={handleCloseNav}>Blog</Link></li>
+      <li className="p-1 NavItem"><Link to="/artists" onClick={handleCloseNav}>Artists</Link></li>
+      <li className="p-1 NavItem"><Link to="/contact" onClick={handleCloseNav}>Contact</Link></li>
       {user&& <p>||</p>}
-      {user && <li className="p-1 NavItem"><Link to="/create">Create</Link></li>}
-      {user && <li className="p-1 NavItem"><Link to={`/profile/${user.displayName}`}>Profile</Link></li>}
-      {!user &&<li className="p-1 NavItem"><Link to="/login">Login</Link></li>}
+      {user && <li className="p-1 NavItem"><Link to="/create"  onClick={handleCloseNav}>Create</Link></li>}
+      {user && <li className="p-1 NavItem"><Link to={`/profile/${user.displayName}`}  onClick={handleCloseNav}>Profile</Link></li>}
+      {!user &&<li className="p-1 NavItem"><Link to="/login"  onClick={handleCloseNav}>Login</Link></li>}
     </ul>
   );
  
   return (
+    <Transitions>
     <Navbar className="navGrabber mx-auto max-w-screen-xl py-1 px-4 lg:px-8 lg:py-4 bg-transparent border-none shadow-lg rounded-lg mt-2">
       <div className="container mx-auto flex items-center justify-between ">
 
@@ -54,5 +60,6 @@ export default function NavbarOne() {
         </div>
       </MobileNav>
     </Navbar>
+    </Transitions>
   );
 }

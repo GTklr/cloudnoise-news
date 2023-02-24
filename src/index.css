@@ -37,7 +37,7 @@ h3{
 }
 
 .card{
-  @apply bg-fourth rounded-lg overflow-hidden shadow-md relative hover:shadow-lg
+  @apply overflow-hidden shadow-md relative hover:shadow-lg
 }
 
 .outlineBtn{
@@ -50,10 +50,10 @@ h3{
 }
 
 .btn {
-  @apply relative w-full py-2 px-20 border border-transparent text-sm font-medium rounded-md text-white bg-transparent shadow-xl hover:bg-white hover:bg-opacity-20 
+  @apply relative w-full py-2 px-20 border border-transparent text-sm font-medium  text-white bg-transparent shadow-xl hover:bg-white hover:bg-opacity-20 
 }
 .btn-disabled {
-  @apply relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white shadow-xl hover:bg-white hover:bg-opacity-20 opacity-30
+  @apply relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium text-white shadow-xl hover:bg-white hover:bg-opacity-20 opacity-30
 }
 
 .wrapper-class{
@@ -84,5 +84,5 @@ h3{
 } */
 
 .imgHover{
-  @apply hover:scale-105 hover:shadow-2xl transition ease-in-out cursor-pointer
+  @apply hover:scale-105 transition ease-in-out cursor-pointer
 }

@@ -115,8 +115,8 @@ export default function Create() {
 
   return (
     <TransitionsIndiv>
-    <div className='text-center text-white min-h-screen'>
-      <div className="p-10">
+    <div className='text-center text-white min-h-screen lg:px-20'>
+      <div className="py-10">
         <div className="py-5">
           <h1>Create new blogpost</h1>
         </div>
